@@ -32,16 +32,19 @@ public class Medium74Search2dArray {
                 {10, 11, 16, 20},
                 {23, 30, 34, 50}
         };
+
+        int target = 16;
         System.out.println("Input:");
         for(int[] a: array) {
             System.out.println(Arrays.toString(a));
         }
+
         System.out.println("Expect:");
         System.out.println("true");
 
 
         System.out.println("Output:");
-        System.out.println(new Medium74Search2dArraySolution().searchMatrix2(array, 3));
+        System.out.println(new Medium74Search2dArraySolution().searchMatrix2(array, target));
     }
 }
 
