@@ -1,4 +1,4 @@
-package com.snippets;
+package com.snippets.ds;
 
 import java.util.Arrays;
 
