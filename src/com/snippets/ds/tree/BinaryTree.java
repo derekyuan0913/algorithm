@@ -12,6 +12,11 @@ public class BinaryTree {
     /*
     * 利用数组构造二叉树
     * */
+
+    public static TreeNode createBinaryTree(int[] nodes) {
+        return createBinaryTree(nodes, 0);
+    }
+
     public static TreeNode createBinaryTree(int[] nodes, int index) {
 
         if (index > nodes.length -1) return null;
@@ -94,7 +99,7 @@ public class BinaryTree {
 
 
     /*
-     * 中序遍历(递归)
+     * 中序遍历(非递归)
      * 考察到一个节点后，将其暂存，遍历完左子树后，再输出该节点的值，然后遍历右子树。(左-根-右)
      * */
     public static void nonRecursiveInOrderTraversal(TreeNode root) {
@@ -115,20 +120,22 @@ public class BinaryTree {
     }
 
     /*
-     * 后序遍历(递归)
+     * 后序遍历(非递归)
      * 考察到一个节点后，将其暂存，遍历完左右子树后，再输出该节点的值。(左-右-根)
      * */
     public static void nonRecursivePostOrderTraversal(TreeNode root) {
 
-        Stack<TreeNode> leftStack = new Stack<>();
-        Stack<TreeNode> rightStack = new Stack<>();
-        TreeNode node = root;
-    }
+        /*
+        * TODO: 完成后续遍历非递归实现
+        * */
 
+
+    }
 
     private static void printNode(TreeNode node) {
         System.out.print(node.val +" ");
     }
+
 
 
     public static void main(String[] args) {
