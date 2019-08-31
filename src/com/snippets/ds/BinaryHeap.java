@@ -99,15 +99,12 @@ public class BinaryHeap<Key extends Comparable<Key>> {
 class TestHeap {
     public static void main(String[] args) {
 
-        BinaryHeap heap = new BinaryHeap();
-        //System.out.println(heap.isEmpty());
+        BinaryHeap<Integer> heap = new BinaryHeap<>();
         heap.insert(6);
         heap.insert(2);
         heap.insert(5);
         heap.insert(10);
 
-
-        //System.out.println(heap.isEmpty());
         System.out.println(heap.poll());
         System.out.println(heap.poll());
         System.out.println(heap.poll());
