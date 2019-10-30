@@ -15,6 +15,8 @@ https://leetcode-cn.com/problems/merge-two-sorted-lists/
 * */
 
 
+import com.snippets.ds.ListNode;
+
 public class Easy21MegreTwoSortedLists {
 
     public static void main(String[] args) {

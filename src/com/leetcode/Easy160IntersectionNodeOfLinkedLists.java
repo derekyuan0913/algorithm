@@ -15,6 +15,8 @@ package com.leetcode;
 
 * */
 
+import com.snippets.ds.ListNode;
+
 public class Easy160IntersectionNodeOfLinkedLists {
 
     public static void main(String[] args) {
@@ -31,28 +33,6 @@ public class Easy160IntersectionNodeOfLinkedLists {
     }
 }
 
-
-/*
-* Definition for singly-linked list.
-* */
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-
-    ListNode(int[] array) {
-        this(array[0]);
-        ListNode pre = this;
-        for (int i = 1; i < array.length; i++) {
-            pre.next = new ListNode(array[i]);
-            pre = pre.next;
-        }
-    }
-}
 
 
 class Easy160IntersectionNodeOfLinkedListsSolution {
