@@ -37,6 +37,8 @@ public class Easy14LongestCommonPrefix {
 
         System.out.println("Output:");
         System.out.println(new Easy14LongestCommonPrefixSolution().longestCommonPrefix(input));
+        System.out.println(new Easy14LongestCommonPrefixSolution().longestCommonPrefix2(input));
+
     }
 }
 
@@ -44,13 +46,13 @@ public class Easy14LongestCommonPrefix {
 class Easy14LongestCommonPrefixSolution {
 
     /*
-    * 解法1， 按字符列扫描
-    *
-    * 用第首个单词的每个字符（遍历字符），依次到剩余单词（遍历剩余单词）对应位置检查是否一致，
-    *  一致则继续下一个字符检查，不一致则停止检查，直接返回当前结果。
-    *
-    *
-    * */
+     * 解法1， 遍历更新公共前缀
+     *
+     * 假设公共前缀为首个字符串的全部，依次遍历剩余字符串，将每个字符的字符与公共前缀相同位置
+     * 的字符比较，如果在某个位置字符不同，则这个位置之前的部分就是公共前缀。
+     *
+     *
+     * */
     public String longestCommonPrefix(String[] strs) {
         if(strs.length == 0) {
             return "";
@@ -68,5 +70,25 @@ class Easy14LongestCommonPrefixSolution {
             }
         }
         return prefix;
+    }
+
+    /*
+     * 解法2， 按字符列扫描
+     *
+     * 用第首个单词的每个字符（遍历字符），依次到剩余单词（遍历剩余单词）对应位置检查是否一致，
+     *  一致则继续下一个字符检查，不一致则停止检查，直接返回当前结果。
+     *
+     *
+     * */
+    public String longestCommonPrefix2(String[] strs) {
+
+        for(int i = 0; i<strs[0].length(); i++) {
+            for(int j=1; j<strs.length; j++) {
+                if(i == strs[j].length() ||strs[j].charAt(i) != strs[0].charAt(i)) {
+                    return strs[0].substring(0, i);
+                }
+            }
+        }
+        return strs[0];
     }
 }

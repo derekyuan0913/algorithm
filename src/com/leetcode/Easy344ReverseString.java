@@ -32,16 +32,6 @@ public class Easy344ReverseString {
         System.out.println("输出：[\"o\",\"l\",\"l\",\"e\",\"h\"]");
 
         new Easy344ReverseStringSolution().reverseString(s);
-
-        int a=3;
-        int b = 5;
-
-        a ^=b;
-        b^=a;
-        a ^=b;
-        System.out.println(a);
-        System.out.println(b);
-
     }
 }
 
