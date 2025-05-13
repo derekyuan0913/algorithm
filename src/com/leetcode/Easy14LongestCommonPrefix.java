@@ -52,19 +52,21 @@ class Easy14LongestCommonPrefixSolution {
     *
     * */
     public String longestCommonPrefix(String[] strs) {
-
-        if (strs.length == 0) {
+        if(strs.length == 0) {
             return "";
         }
-        for(int i = 0; i < strs[0].length(); i++) {
-            char c = strs[0].charAt(i);
-            for (int j = 1; j < strs.length; j++) {
-                //容易忽略掉 strs[j].length() == i 条件 而导致 ["aa", "a"] 的情况下出现数组越界
-                if(strs[j].length() == i || strs[j].charAt(i) != c) {
-                    return strs[0].substring(0, i);
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            for( int j = 0; j < prefix.length(); j++) {
+                if(j == strs[i].length() || prefix.charAt(j) != strs[i].charAt(j)) {
+                    prefix = prefix.substring(0, j);
+                    break;
                 }
             }
+            if(prefix.isEmpty()) {
+                return "";
+            }
         }
-        return strs[0];
+        return prefix;
     }
 }
