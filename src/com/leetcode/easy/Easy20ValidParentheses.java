@@ -38,22 +38,36 @@ import java.util.Stack;
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 * */
-public class Easy20VaildParentheses {
+public class Easy20ValidParentheses {
 
     public static void main(String[] args) {
-        String s = "]";
+        String s = "([)]";
         System.out.println("Input:");
-        System.out.println("s");
+        System.out.println(s);
         System.out.println("Expect:");
         System.out.println("false");
-
-
         System.out.println("Output:");
-        System.out.println(new Easy20VaildParenthesesSolution().isValid(s));
+        System.out.println(new Easy20ValidParenthesesSolution().isValid3(s));
+
+        String s2 = "{[]}";
+        System.out.println("Input:");
+        System.out.println(s2);
+        System.out.println("Expect:");
+        System.out.println("false");
+        System.out.println("Output:");
+        System.out.println(new Easy20ValidParenthesesSolution().isValid3(s2));
+
+        String s3 = "]";
+        System.out.println("Input:");
+        System.out.println(s3);
+        System.out.println("Expect:");
+        System.out.println("false");
+        System.out.println("Output:");
+        System.out.println(new Easy20ValidParenthesesSolution().isValid3(s3));
     }
 }
 
-class Easy20VaildParenthesesSolution {
+class Easy20ValidParenthesesSolution {
 
     /*
     利用栈，写法一，较为繁琐
@@ -99,6 +113,28 @@ class Easy20VaildParenthesesSolution {
             if (mappings.containsKey(c)) {
                 char out = stack.isEmpty() ? '#' : stack.pop();
                 if(out != mappings.get(c)) { return false; }
+            }else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public boolean isValid3(String s) {
+        HashMap<Character, Character> mappings = new HashMap<>();
+        mappings.put(')','(');
+        mappings.put(']','[');
+        mappings.put('}','{');
+
+        if (s.length() % 2 != 0) {
+            return false;
+        }
+        Stack<Character> stack = new Stack<>();
+        for(char c : s.toCharArray()) {
+            if (mappings.containsKey(c)) {
+                if (stack.pop() != mappings.get(c)) {
+                    return false;
+                }
             }else {
                 stack.push(c);
             }
