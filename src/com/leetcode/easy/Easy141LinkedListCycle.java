@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.easy;
 
 
 import com.snippets.ds.ListNode;
