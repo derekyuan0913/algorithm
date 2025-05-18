@@ -55,22 +55,18 @@ public class Easy112PathSum {
 
 
         TreeNode root = BinaryTree.createBinaryTree(nodes);
-        boolean result = new Easy112PathSumSolution().hasPathSum2(root, 22);
+        boolean result = hasPathSum2(root, 22);
 
         System.out.println("Output:");
         System.out.println(result);
     }
-}
-
-
-class Easy112PathSumSolution {
 
     /*
-    * 解法1 递归法
-    *
-    * 依次判断子树是否满足节点和等于 （sum - 当前根节点 val）
-    * */
-    public boolean hasPathSum(TreeNode root, int sum) {
+     * 解法1 递归法
+     *
+     * 依次判断子树是否满足节点和等于 （sum - 当前根节点 val）
+     * */
+    public static boolean hasPathSum(TreeNode root, int sum) {
 
         if (root == null) return false;
 
@@ -82,10 +78,10 @@ class Easy112PathSumSolution {
     }
 
     /*
-    * 解法2 迭代法(DFS深度优先)
-    *
-    * */
-    public boolean hasPathSum2(TreeNode root, int sum) {
+     * 解法2 迭代法(DFS深度优先)
+     *
+     * */
+    public static boolean hasPathSum2(TreeNode root, int sum) {
 
         if (root == null) return false;
 
@@ -114,3 +110,4 @@ class Easy112PathSumSolution {
         return false;
     }
 }
+

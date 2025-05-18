@@ -47,7 +47,7 @@ public class Easy20ValidParentheses {
         System.out.println("Expect:");
         System.out.println("false");
         System.out.println("Output:");
-        System.out.println(new Easy20ValidParenthesesSolution().isValid3(s));
+        System.out.println(isValidParentheses3(s));
 
         String s2 = "{[]}";
         System.out.println("Input:");
@@ -55,7 +55,7 @@ public class Easy20ValidParentheses {
         System.out.println("Expect:");
         System.out.println("false");
         System.out.println("Output:");
-        System.out.println(new Easy20ValidParenthesesSolution().isValid3(s2));
+        System.out.println(isValidParentheses3(s2));
 
         String s3 = "]";
         System.out.println("Input:");
@@ -63,16 +63,13 @@ public class Easy20ValidParentheses {
         System.out.println("Expect:");
         System.out.println("false");
         System.out.println("Output:");
-        System.out.println(new Easy20ValidParenthesesSolution().isValid3(s3));
+        System.out.println(isValidParentheses3(s3));
     }
-}
-
-class Easy20ValidParenthesesSolution {
 
     /*
-    利用栈，写法一，较为繁琐
-    * */
-    public boolean isValid(String s) {
+利用栈，写法一，较为繁琐
+* */
+    public static boolean isValidParentheses(String s) {
 
         Stack<Character> stack = new Stack<>();
         for(char c : s.toCharArray()) {
@@ -102,7 +99,7 @@ class Easy20ValidParenthesesSolution {
     /*
     利用栈，写法二，较为简洁
     * */
-    public boolean isValid2(String s) {
+    public static boolean isValidParentheses2(String s) {
         HashMap<Character, Character> mappings = new HashMap<>();
         mappings.put(')','(');
         mappings.put(']','[');
@@ -120,7 +117,7 @@ class Easy20ValidParenthesesSolution {
         return stack.isEmpty();
     }
 
-    public boolean isValid3(String s) {
+    public static boolean isValidParentheses3(String s) {
         HashMap<Character, Character> mappings = new HashMap<>();
         mappings.put(')','(');
         mappings.put(']','[');
@@ -142,3 +139,5 @@ class Easy20ValidParenthesesSolution {
         return stack.isEmpty();
     }
 }
+
+

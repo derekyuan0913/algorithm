@@ -33,18 +33,15 @@ public class Easy88MergeSortedArray {
         System.out.println(Arrays.toString(nums2));
 
         System.out.println("Output:");
-        new Easy88MergeSortedArraySolution().merge(nums1, 5, nums2,nums2.length);
+        mergeSortedArray(nums1, 5, nums2,nums2.length);
         System.out.println(Arrays.toString(nums1));
     }
-}
-
-class Easy88MergeSortedArraySolution {
 
     /*
-    * 双指针法（未做出）
-    * p1, p2 分别指向两数组尾部，将较大的值放入数组最终位置
-    * */
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+     * 双指针法（未做出）
+     * p1, p2 分别指向两数组尾部，将较大的值放入数组最终位置
+     * */
+    public static void mergeSortedArray(int[] nums1, int m, int[] nums2, int n) {
 
         int p1 = m - 1;
         int p2 = n - 1;
@@ -56,3 +53,4 @@ class Easy88MergeSortedArraySolution {
         System.arraycopy(nums2, 0, nums1, 0, p2+1);
     }
 }
+

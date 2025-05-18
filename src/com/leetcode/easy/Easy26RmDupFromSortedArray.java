@@ -31,20 +31,17 @@ public class Easy26RmDupFromSortedArray {
         System.out.println("[0, 1, 2, 3, 4]");
 
         System.out.println("Output:");
-        int len = new Easy26RmDupFromSortedArraySolution().removeDuplicates2(nums);
+        int len = removeDuplicates2(nums);
         System.out.println(len);
         System.out.println(Arrays.toString(Arrays.copyOfRange(nums, 0, len)));
     }
-}
 
-
-class Easy26RmDupFromSortedArraySolution {
 
     /*
-    解法1：双指针，依次判断当前数与后续几个数是否相当，时间效率差
+解法1：双指针，依次判断当前数与后续几个数是否相当，时间效率差
 
-    * */
-    public int removeDuplicates(int[] nums) {
+* */
+    public static int removeDuplicates(int[] nums) {
 
         int position = 0;
 
@@ -68,7 +65,7 @@ class Easy26RmDupFromSortedArraySolution {
     i为慢指针，j为快指针，只要nums[j] == nums[j], 就增加j以跳过重复项
     * */
 
-    public int removeDuplicates2(int[] nums) {
+    public static int removeDuplicates2(int[] nums) {
         if (nums.length == 0) return 0;
         int i = 0;
         for (int j = 1; j < nums.length; j++) {
@@ -82,7 +79,7 @@ class Easy26RmDupFromSortedArraySolution {
     /*
     解法3 单层循环，依次判断当前数与前一个数是否相等。
     * */
-    public int removeDuplicates3(int[] nums) {
+    public static int removeDuplicates3(int[] nums) {
         if (nums.length ==0) {
             return 0;
         }
@@ -101,3 +98,4 @@ class Easy26RmDupFromSortedArraySolution {
         return position;
     }
 }
+

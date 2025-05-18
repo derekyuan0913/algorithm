@@ -33,11 +33,8 @@ public class Easy206ReverseLinkedList {
         System.out.println("Output:");
         System.out.println();
     }
-}
 
-class Easy206ReverseLinkedListSolution {
-
-    public ListNode reverseList(ListNode head) {
+    public static ListNode reverseList(ListNode head) {
 
         ListNode prev = null;
         ListNode next = null;

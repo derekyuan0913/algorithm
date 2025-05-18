@@ -51,17 +51,13 @@ public class Easy104MaximumDepthOfBinaryTree {
 
 
         System.out.println("Output:");
-        System.out.println(new Easy104MaximumDepthSolution().maxDepth2(tree));
+        System.out.println(maxDepth2(tree));
     }
-}
-
-class Easy104MaximumDepthSolution {
-
 
     /*
-    * 解法1 递归
-    * */
-    public int maxDepth(TreeNode root) {
+     * 解法1 递归
+     * */
+    public static int maxDepth(TreeNode root) {
 
         if (root == null) return 0;
 
@@ -74,9 +70,9 @@ class Easy104MaximumDepthSolution {
 
 
     /*
-    * 解法2 迭代（DFS 深度优先）
-    * */
-    public int maxDepth2(TreeNode root) {
+     * 解法2 迭代（DFS 深度优先）
+     * */
+    public static int maxDepth2(TreeNode root) {
 
 
         if(root == null) return 0;
@@ -105,3 +101,5 @@ class Easy104MaximumDepthSolution {
         return maxDepth;
     }
 }
+
+

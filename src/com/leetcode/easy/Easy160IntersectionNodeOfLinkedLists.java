@@ -28,20 +28,15 @@ public class Easy160IntersectionNodeOfLinkedLists {
         System.out.println("9");
 
         System.out.println("Output:");
-        System.out.println(new Easy160IntersectionNodeOfLinkedListsSolution()
-                .getIntersectionNode2(headA,headB).val);
+        System.out.println(getIntersectionNode2(headA,headB).val);
     }
-}
 
-
-
-class Easy160IntersectionNodeOfLinkedListsSolution {
 
     /*
-    方法1，长链表指针先走的方式消除长度差，最终两链表即可同时走到相交点
+方法1，长链表指针先走的方式消除长度差，最终两链表即可同时走到相交点
 
-    * */
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+* */
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
         int listALength = 0;
         int listBLength = 0;
@@ -100,7 +95,7 @@ class Easy160IntersectionNodeOfLinkedListsSolution {
 
     M = N+(M-N)，此时，两链表长度差消除，同时遍历即可找到相同节点
     * */
-    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+    public static ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
 
         if (headA == null || headB == null) return null;
         ListNode pA = headA, pB = headB;
@@ -112,3 +107,5 @@ class Easy160IntersectionNodeOfLinkedListsSolution {
         return pA;
     }
 }
+
+

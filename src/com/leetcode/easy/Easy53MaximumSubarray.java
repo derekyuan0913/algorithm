@@ -31,19 +31,16 @@ public class Easy53MaximumSubarray {
 
 
         System.out.println("Output:");
-        System.out.println(new Easy53MaximumSubarraySolution().maxSubArray(nums));
+        System.out.println(maxSubArray(nums));
     }
-}
-
-class Easy53MaximumSubarraySolution {
 
     /*
-    未做出
-    动态规划
-    如果 sum > 0，则说明 sum 对结果有增益效果，则 sum 保留并加上当前遍历数字
-    如果 sum <= 0，则说明 sum 对结果无增益效果，需要舍弃，则 sum 直接更新为当前遍历数字
-    * */
-    public int maxSubArray(int[] nums) {
+未做出
+动态规划
+如果 sum > 0，则说明 sum 对结果有增益效果，则 sum 保留并加上当前遍历数字
+如果 sum <= 0，则说明 sum 对结果无增益效果，需要舍弃，则 sum 直接更新为当前遍历数字
+* */
+    public static int maxSubArray(int[] nums) {
 
         int result = nums[0];
         int sum = 0;
@@ -54,3 +51,4 @@ class Easy53MaximumSubarraySolution {
         return result;
     }
 }
+

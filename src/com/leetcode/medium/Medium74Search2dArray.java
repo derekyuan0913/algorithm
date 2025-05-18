@@ -44,19 +44,15 @@ public class Medium74Search2dArray {
 
 
         System.out.println("Output:");
-        System.out.println(new Medium74Search2dArraySolution().searchMatrix2(array, target));
+        System.out.println(searchMatrix2(array, target));
     }
-}
-
-
-class Medium74Search2dArraySolution {
 
     /*
-    * 解法1 缩小范围递归法
-    *
-    * 目标数与二位数组左下角数相比，大于则遍历最后一行逐个比较，小于则裁剪掉最后一行，用裁剪后的新数组重复此操作。
-    * */
-    public boolean searchMatrix(int[][] matrix, int target) {
+     * 解法1 缩小范围递归法
+     *
+     * 目标数与二位数组左下角数相比，大于则遍历最后一行逐个比较，小于则裁剪掉最后一行，用裁剪后的新数组重复此操作。
+     * */
+    public static boolean searchMatrix(int[][] matrix, int target) {
 
         int rowCount = matrix.length;
         if(rowCount == 0) return false;
@@ -90,9 +86,9 @@ class Medium74Search2dArraySolution {
 
 
     /*
-    * 二分搜索法（将数组降维）
-    * */
-    public boolean searchMatrix2(int[][] matrix, int target) {
+     * 二分搜索法（将数组降维）
+     * */
+    public static boolean searchMatrix2(int[][] matrix, int target) {
 
         int rowCount = matrix.length;
         if(rowCount == 0) return false;
@@ -118,3 +114,4 @@ class Medium74Search2dArraySolution {
         return false;
     }
 }
+

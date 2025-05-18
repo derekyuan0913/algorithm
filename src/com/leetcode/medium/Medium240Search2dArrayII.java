@@ -48,14 +48,10 @@ public class Medium240Search2dArrayII {
 
 
         System.out.println("Output:");
-        System.out.println(new Medium240Search2dArrayIISolution().searchMatrix(array, 16));
+        System.out.println(searchMatrix(array, 16));
     }
 
-}
-
-class Medium240Search2dArrayIISolution {
-
-    public boolean searchMatrix(int[][] matrix, int target) {
+    public static boolean searchMatrix(int[][] matrix, int target) {
 
         int rowCount = matrix.length;
         if(rowCount == 0) return false;
@@ -78,3 +74,4 @@ class Medium240Search2dArrayIISolution {
         return false;
     }
 }
+

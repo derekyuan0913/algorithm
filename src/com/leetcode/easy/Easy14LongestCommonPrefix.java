@@ -36,14 +36,10 @@ public class Easy14LongestCommonPrefix {
         System.out.println("fl");
 
         System.out.println("Output:");
-        System.out.println(new Easy14LongestCommonPrefixSolution().longestCommonPrefix(input));
-        System.out.println(new Easy14LongestCommonPrefixSolution().longestCommonPrefix2(input));
+        System.out.println(longestCommonPrefix(input));
+        System.out.println(longestCommonPrefix2(input));
 
     }
-}
-
-
-class Easy14LongestCommonPrefixSolution {
 
     /*
      * 解法1， 遍历更新公共前缀
@@ -53,7 +49,7 @@ class Easy14LongestCommonPrefixSolution {
      *
      *
      * */
-    public String longestCommonPrefix(String[] strs) {
+    public static String longestCommonPrefix(String[] strs) {
         if(strs.length == 0) {
             return "";
         }
@@ -80,7 +76,7 @@ class Easy14LongestCommonPrefixSolution {
      *
      *
      * */
-    public String longestCommonPrefix2(String[] strs) {
+    public static String longestCommonPrefix2(String[] strs) {
 
         for(int i = 0; i<strs[0].length(); i++) {
             for(int j=1; j<strs.length; j++) {

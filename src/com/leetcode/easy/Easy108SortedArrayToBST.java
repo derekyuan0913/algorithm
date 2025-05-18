@@ -22,19 +22,16 @@ public class Easy108SortedArrayToBST {
         System.out.println(Arrays.toString(nums));
         System.out.println("Output:");
 
-        TreeNode root = new Easy108SortedArrayToBSTSolution().sortedArrayToBST(nums);
+        TreeNode root = sortedArrayToBST(nums);
         BinaryTree.inOrderTraversal(root);
     }
-}
 
-class Easy108SortedArrayToBSTSolution {
-
-    public TreeNode sortedArrayToBST(int[] nums) {
+    public static TreeNode sortedArrayToBST(int[] nums) {
         if(nums == null) return null;
         return sortedArrayToBST(nums, 0, nums.length-1);
     }
 
-    public TreeNode sortedArrayToBST(int[] nums, int start, int end) {
+    public static TreeNode sortedArrayToBST(int[] nums, int start, int end) {
 
         if(start > end) return null;
 

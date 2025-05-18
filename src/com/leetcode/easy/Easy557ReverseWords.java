@@ -25,18 +25,13 @@ public class Easy557ReverseWords {
         System.out.println();
         String s = "Let's take LeetCode contest";
         System.out.println(s);
-        System.out.println(new Easy557ReverseWordsSolution().reverseWords3(s));
+        System.out.println(reverseWords3(s));
     }
-}
-
-
-class Easy557ReverseWordsSolution {
-
 
     /*
-    * 方法1，基于栈实现，时间和空间效率较低
-    * */
-    public String reverseWords(String s) {
+     * 方法1，基于栈实现，时间和空间效率较低
+     * */
+    public static String reverseWords(String s) {
 
         Stack<Character> stack = new Stack<>();
         StringBuilder builder = new StringBuilder();
@@ -66,7 +61,7 @@ class Easy557ReverseWordsSolution {
      * 方法2，利用StringBuilder实现字符串反转和拼接
      * */
 
-    public String reverseWords3(String s) {
+    public static String reverseWords3(String s) {
 
         StringBuilder builder = new StringBuilder();
         for(String word: s.split(" ")) {
@@ -79,7 +74,7 @@ class Easy557ReverseWordsSolution {
     /*
      * 方法3，利用java.util.StringJoiner实现拼接，利用StringBuilder实现字符串反转
      * */
-    public String reverseWords2(String s) {
+    public static String reverseWords2(String s) {
 
         StringJoiner joiner = new StringJoiner(" ");
 
@@ -93,7 +88,7 @@ class Easy557ReverseWordsSolution {
      * 方法4，转换为CharArray，手动交换单词中字符，遇到空格跳过
      * 时间效率较高
      * */
-    public String reverseWords4(String s) {
+    public static String reverseWords4(String s) {
 
         char[] wordsArray = s.toCharArray();
         int startInx = 0;
@@ -115,3 +110,5 @@ class Easy557ReverseWordsSolution {
         return String.valueOf(wordsArray);
     }
 }
+
+

@@ -32,19 +32,16 @@ public class Easy169MajorityElement {
         System.out.println("Output:");
         System.out.println();
     }
-}
-
-class Easy169MajorityElementSolution {
 
     /*
-    * 此题与《编程之美》中"寻找发帖水王"为为同一题。
-    * 解法，思路为对不同的数两两消除，剩下的就为众数。
-    *
-    *
-    * 或等价为 假设当前数为众数， 如果遇到一个我们目前的候选众数，就将计数器加一，否则减一。
-    * 只要计数器等于 0 ，我们就将 nums 中之前访问的数字全部 忘记 ，并把下一个数字当做候选的众数。
-    * */
-    public int majorityElement(int[] nums) {
+     * 此题与《编程之美》中"寻找发帖水王"为为同一题。
+     * 解法，思路为对不同的数两两消除，剩下的就为众数。
+     *
+     *
+     * 或等价为 假设当前数为众数， 如果遇到一个我们目前的候选众数，就将计数器加一，否则减一。
+     * 只要计数器等于 0 ，我们就将 nums 中之前访问的数字全部 忘记 ，并把下一个数字当做候选的众数。
+     * */
+    public static int majorityElement(int[] nums) {
         int majority = 0;
         int sum = 0;
         for (int num : nums) {
@@ -56,3 +53,4 @@ class Easy169MajorityElementSolution {
         return majority;
     }
 }
+

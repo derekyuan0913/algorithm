@@ -29,18 +29,14 @@ public class Easy21MegreTwoSortedLists {
         System.out.println("Output:");
         System.out.println();
     }
-}
-
-class Easy21MegreTwoSortedListsSolution {
-
 
     /*
-    * 遍历法，依次比较两个链表当前节点大小，维护一个前一个节点的指针，将指针指向当前较小的节点
-    *
-    * 未做出
-    * 做题过程中，思路想出来，但没想到用prev指针维护前一个节点的操作
-    * */
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+     * 遍历法，依次比较两个链表当前节点大小，维护一个前一个节点的指针，将指针指向当前较小的节点
+     *
+     * 未做出
+     * 做题过程中，思路想出来，但没想到用prev指针维护前一个节点的操作
+     * */
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
         // maintain an unchanging reference to node ahead of the return node.
         ListNode prehead = new ListNode(-1);
@@ -62,6 +58,5 @@ class Easy21MegreTwoSortedListsSolution {
 
         return prehead.next;
     }
-
-
 }
+

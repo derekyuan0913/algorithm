@@ -27,17 +27,15 @@ public class Easy387FirstUniqueCharacter {
 
 
         System.out.println("Output:");
-        System.out.println(new Easy387FirstUniqueCharacterSolution().firstUniqChar(s));
+        System.out.println(firstUniqChar(s));
     }
-}
 
-class Easy387FirstUniqueCharacterSolution {
 
 
     /*
-    * 直接利用 String类的 indexOf 和 lastIndexOf 解决即可。
-    * */
-    public int firstUniqChar(String s) {
+     * 直接利用 String类的 indexOf 和 lastIndexOf 解决即可。
+     * */
+    public static int firstUniqChar(String s) {
 
         for (int i = 0; i < s.length(); i++) {
             if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
@@ -50,9 +48,9 @@ class Easy387FirstUniqueCharacterSolution {
 
     /* 错解
 
-    * 利用双层循环遍历法未做出来（字符为""或单字符时出错结果出错）
-    * */
-    public int firstUniqChar2(String s) {
+     * 利用双层循环遍历法未做出来（字符为""或单字符时出错结果出错）
+     * */
+    public static int firstUniqChar2(String s) {
 
         int position = -1;
 
@@ -72,3 +70,4 @@ class Easy387FirstUniqueCharacterSolution {
         return position;
     }
 }
+

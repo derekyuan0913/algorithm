@@ -30,18 +30,14 @@ public class Easy344ReverseString {
         System.out.println("输入：[\"h\",\"e\",\"l\",\"l\",\"o\"]");
         System.out.println("Expect:");
         System.out.println("输出：[\"o\",\"l\",\"l\",\"e\",\"h\"]");
-
-        new Easy344ReverseStringSolution().reverseString(s);
+        reverseString(s);
     }
-}
-
-class Easy344ReverseStringSolution {
 
 
     /*
-    * 解法1，常规解法
-    * */
-    public void reverseString(char[] s) {
+     * 解法1，常规解法
+     * */
+    public static void reverseString(char[] s) {
 
         int l = 0;
         int r = s.length-1;
@@ -61,7 +57,7 @@ class Easy344ReverseStringSolution {
      *
      *  a ^=b; b^=a; a ^=b; 即可完成 a, b 值的交换
      * */
-    public void reverseString2(char[] s) {
+    public static void reverseString2(char[] s) {
 
         int l = 0;
         int r = s.length-1;
@@ -73,6 +69,5 @@ class Easy344ReverseStringSolution {
             r--;
         }
     }
-
-
 }
+

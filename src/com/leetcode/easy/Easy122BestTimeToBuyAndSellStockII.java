@@ -32,21 +32,18 @@ public class Easy122BestTimeToBuyAndSellStockII {
         System.out.println("7");
 
         System.out.println("Output:");
-        System.out.println(new Easy122StockIISolution().maxProfit2(prices));
+        System.out.println(maxProfit2(prices));
     }
-}
-
-class Easy122StockIISolution {
 
     /*
-    * 思路
-    *
-    * 只要股票价格上涨，上涨的部分就是我的利润，可以理解为上涨期间第一天买入，
-    * 然后一直持有到上涨最后一天即下跌前一天再卖出。
-    *
-    * 只要股票价格下跌，那我肯定在下跌前一天卖了，而且下跌期间永远不会买入。买入时机在上涨的前一天
-    * */
-    public int maxProfit(int[] prices) {
+     * 思路
+     *
+     * 只要股票价格上涨，上涨的部分就是我的利润，可以理解为上涨期间第一天买入，
+     * 然后一直持有到上涨最后一天即下跌前一天再卖出。
+     *
+     * 只要股票价格下跌，那我肯定在下跌前一天卖了，而且下跌期间永远不会买入。买入时机在上涨的前一天
+     * */
+    public static int maxProfit(int[] prices) {
 
         int totalProfile = 0;
 
@@ -58,7 +55,7 @@ class Easy122StockIISolution {
         return totalProfile;
     }
 
-    public int maxProfit2(int[] prices) {
+    public static int maxProfit2(int[] prices) {
         int totalProfit = 0;
         int buy = prices[0];
         int sell = 0;
@@ -71,3 +68,4 @@ class Easy122StockIISolution {
         return totalProfit;
     }
 }
+

@@ -35,20 +35,19 @@ public class Easy136SingleNumber {
 
 
         System.out.println("Output:");
-        System.out.println(new Easy136SingleNumberSolution().singleNumber(nums));
+        System.out.println(singleNumber(nums));
     }
-}
 
-/*
-*  位操作
-*  由于其余每个元素均出现两次，基于 a^a = 0，所以对整个数组依次异或运算，相同的数字最终被消除，最终结果即为只出现一次的数字。
-* */
-class Easy136SingleNumberSolution {
-
-    public int singleNumber(int[] nums) {
+    /*
+     *  位操作
+     *  由于其余每个元素均出现两次，基于 a^a = 0，所以对整个数组依次异或运算，相同的数字最终被消除，最终结果即为只出现一次的数字。
+     * */
+    public static int singleNumber(int[] nums) {
         for (int i = 1; i < nums.length ; i++) {
             nums[0] ^= nums[i];
         }
         return nums[0];
     }
 }
+
+
