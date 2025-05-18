@@ -132,7 +132,7 @@ class Easy20ValidParenthesesSolution {
         Stack<Character> stack = new Stack<>();
         for(char c : s.toCharArray()) {
             if (mappings.containsKey(c)) {
-                if (stack.pop() != mappings.get(c)) {
+                if (stack.isEmpty() || stack.pop() != mappings.get(c)) {
                     return false;
                 }
             }else {

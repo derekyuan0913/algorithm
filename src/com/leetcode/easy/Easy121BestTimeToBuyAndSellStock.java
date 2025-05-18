@@ -37,7 +37,7 @@ public class Easy121BestTimeToBuyAndSellStock {
         System.out.println("5");
 
         System.out.println("Output:");
-        System.out.println(new Easy121StockSolution().maxProfit(prices));
+        System.out.println(new Easy121StockSolution().maxProfit2(prices));
     }
 }
 
@@ -61,9 +61,24 @@ class Easy121StockSolution {
                 buy = prices[i];
             }else {
                 profile = prices[i] - buy;
-                maxProfile = profile > maxProfile ? profile : maxProfile;
+                maxProfile = Math.max(profile, maxProfile);
             }
         }
         return maxProfile;
+    }
+
+    public int maxProfit2(int[] prices) {
+        int buy = prices[0];
+        int profit = 0;
+        int maxProfit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if(prices[i] > buy) {
+                profit = prices[i] - buy;
+            } else {
+                buy = prices[i];
+            }
+            maxProfit = Math.max(maxProfit, profit);
+        }
+        return maxProfit;
     }
 }
